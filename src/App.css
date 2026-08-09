@@ -258,6 +258,22 @@
   }
 }
 
+@media (max-width: 640px) {
+  .match-detail-teams {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .venue-box,
 .video-box {
   background: var(--surface);
