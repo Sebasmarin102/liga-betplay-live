@@ -4,7 +4,7 @@ App de resultados en vivo, últimos resultados y próximos partidos de la **Liga
 
 ## Demo en vivo
 
-🔗 _Pendiente de desplegar — se agregará el link aquí una vez esté en Vercel._
+🔗 [URL:](https://liga-betplay-live.vercel.app/)
 
 ## Features
 
@@ -22,7 +22,7 @@ App de resultados en vivo, últimos resultados y próximos partidos de la **Liga
 - **React Router** para las rutas (`/`, `/partido/:id`, `/posiciones`)
 - **Recharts** para las gráficas comparativas
 - **[TheSportsDB](https://www.thesportsdb.com/)** (API v1, plan gratuito) como fuente de datos
-- **Función serverless de Vercel** (`api/preview.js`) + **[Groq](https://groq.com/)** (Llama 3.3 70B) para la previa generada por IA — mantiene la API key en el servidor, nunca en el bundle del navegador
+- **Función serverless de Vercel** (`api/preview.js`) + **[Groq](https://groq.com/)** para la previa generada por IA — mantiene la API key en el servidor, nunca en el bundle del navegador
 - Consumo de API con `fetch` nativo (sin librerías como Axios)
 
 ## Qué aprendí / retos de este proyecto
@@ -32,8 +32,7 @@ App de resultados en vivo, últimos resultados y próximos partidos de la **Liga
 - **Manejo de fechas y zonas horarias**: la API devuelve timestamps en UTC sin indicarlo explícitamente; hubo que forzarlo (`+ 'Z'`) y convertir todo a hora de Colombia con `Intl`/`toLocaleString`, evitando cálculos manuales de offset.
 - **Reglas de Hooks de React**: encontré (y entendí por qué pasa) el clásico error de mover un `useEffect` después de un `return` condicional — Hooks deben llamarse siempre en el mismo orden en cada render.
 - **Límites reales de datos gratuitos**: algunos endpoints (listas de próximos partidos, plantillas de jugadores, tabla de posiciones) están capados a pocos resultados en el plan free, lo que obligó a rearmar la lógica de "próximos 7 días" combinando varias llamadas por fecha en vez de un solo endpoint de lista.
-- **Por qué una API key de un LLM no puede ir en el frontend**: las variables `VITE_...` de Vite se incrustan en el bundle público del navegador — cualquiera puede verlas. La previa con IA necesitó su propia función serverless (`api/preview.js`) para mantener esa key solo en el servidor.
-- **Los "planes gratis" de LLMs también tienen letra chica**: probé OpenAI (sin créditos para cuentas nuevas) y Gemini (cuota en 0 para mi región/cuenta) antes de encontrar que Groq sí ofrece un tier gratuito funcional sin tarjeta — otra decisión de arquitectura resuelta por prueba y error real, no por documentación perfecta.
+- **Los "planes gratis" de LLMs**: probé OpenAI (sin créditos para cuentas nuevas) y Gemini (cuota en 0 para mi región/cuenta) antes de encontrar que Groq sí ofrece un tier gratuito funcional sin tarjeta — otra decisión de arquitectura resuelta por prueba y error real, no por documentación perfecta.
 
 ## Nota sobre los datos
 
