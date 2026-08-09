@@ -3,12 +3,14 @@ import Home from './pages/Home'
 import MatchDetail from './pages/MatchDetail'
 import Header from './components/Header'
 import Standings from './pages/Standings'
+import ScrollToTop from './components/ScrollToTop'
 import './App.css'
 
 function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path='/' element={<Home/>}/>
