@@ -4,7 +4,7 @@ App de resultados en vivo, últimos resultados y próximos partidos de la **Liga
 
 ## Demo en vivo
 
-🔗 [URL:](https://liga-betplay-live.vercel.app/)
+🔗 URL: https://liga-betplay-live.vercel.app/
 
 ## Features
 
