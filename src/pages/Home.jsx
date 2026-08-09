@@ -18,9 +18,13 @@ function Home() {
                 setError('No se pudieron cargar los partidos. Intenta de nuevo más tarde.')
             } finally {
                 setLoading(false)
-            }           
+            }
         }
+
         cargar()
+
+        const interval = setInterval(cargar, 60000)
+        return () => clearInterval(interval)
     }, [])
 
     if (error) return <p className="error-message">{error}</p>
